@@ -2,7 +2,6 @@
 #include <map>
 #include <string>
 #include <functional>
-#include <cmath>
 
 using namespace std;
 
@@ -17,7 +16,11 @@ function<void()> EnterNumber(int&var, string label) {
 
 void CalcArea()
 {
-
+    if (side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1){
+        cout << "Треугольник существует" << endl;
+    } else{
+        cout << "Труегольник не существует" << endl;
+    }
 }
 
 void CalcPerim()
