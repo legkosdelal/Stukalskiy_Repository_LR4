@@ -2,13 +2,17 @@
 #include <map>
 #include <string>
 #include <functional>
+#include <cmath>
 
 using namespace std;
 
 int side1, side2, side3;
 
-function<void()> EnterNumber(int& varlink, string label) {
-
+function<void()> EnterNumber(int&var, string label) {
+    return [&var, label]() {
+        cout << label << ": ";
+        cin >> var;
+    };
 }
 
 void CalcArea()
@@ -33,7 +37,7 @@ int main() {
         {3, {"Ввод 3-й стороны треугольника", EnterNumber(side3,"Input side3")}},
         {4, {"Calculate of Area",CalcArea }},
         {1, {"Calculate of Perimetr", CalcPerim}},
-    }
+    };
 
 int choice = 0;
 
@@ -42,7 +46,7 @@ while (true) {
     for (const auto& item : menu) {
         cout << "Task" << item.first << "." << item.second.title << endl;
     }
-    cout << "0.Выход" << stl::endl;
+    cout << "0.Выход" << endl;
     cout << "Введите номер пункта: ";
     cin >> choice;
 
@@ -52,7 +56,7 @@ while (true) {
     }
     cout << endl;
     if (menu.find(choice) != menu.end()){
-        menu[choice].action()''
+        menu[choice].action();
     } else {
         cout << "Неккоректный ввод";
     }
