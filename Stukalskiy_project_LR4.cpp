@@ -8,7 +8,10 @@ using namespace std;
 int side1, side2, side3;
 
 function<void()> EnterNumber(int& varlink, string label) {
-
+    return [&var, label]() {
+        cout << label << ": ";
+        cin >> var;
+    };
 }
 
 void CalcArea()
