@@ -2,31 +2,18 @@
 #include <map>
 #include <string>
 #include <functional>
-#include <cmath>
 
 using namespace std;
 
 int side1, side2, side3;
 
-<<<<<<< HEAD
 function<void()> EnterNumber(int& var, string label) {
 
-=======
-function<void()> EnterNumber(int&var, string label) {
-    return [&var, label]() {
-        cout << label << ": ";
-        cin >> var;
-    };
->>>>>>> origin/main
 }
 
 void CalcArea()
 {
-    if (side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1){
-        cout << "Треугольник существует" << endl;
-    } else{
-        cout << "Труегольник не существует" << endl;
-    }
+
 }
 
 void CalcPerim()
