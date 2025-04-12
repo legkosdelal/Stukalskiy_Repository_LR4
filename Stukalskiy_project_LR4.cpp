@@ -7,11 +7,8 @@ using namespace std;
 
 int side1, side2, side3;
 
-function<void()> EnterNumber(int&var, string label) {
-    return [&var, label]() {
-        cout << label << ": ";
-        cin >> var;
-    };
+function<void()> EnterNumber(int& varlink, string label) {
+
 }
 
 void CalcArea()
@@ -25,7 +22,7 @@ void CalcArea()
 
 void CalcPerim()
 {
-
+    cout << "Периметр треугольника: " << (side1+side2+side3) << endl;
 }
 
 struct MenuItem {
